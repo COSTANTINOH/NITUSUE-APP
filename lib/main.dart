@@ -3,9 +3,9 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 // import 'package:pixel_perfect/pixel_perfect.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:nitusue/playerSplash_ui.dart';
-import 'package:nitusue/signIn_ui.dart';
-import 'package:nitusue/signUp_ui.dart';
+import 'package:nitusue/splash/playerSplash_ui.dart';
+import 'package:nitusue/auth/signIn_ui.dart';
+import 'package:nitusue/auth/signUp_ui.dart';
 import 'package:get/get.dart';
 
 const iconsPath = 'assets/icons/';

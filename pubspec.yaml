@@ -35,6 +35,9 @@ dev_dependencies:
   google_fonts: ^2.0.0
   pixel_perfect: ^1.1.0
 
+dependency_overrides:
+  platform: ^3.1.0
+
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 # The following section is specific to Flutter.
