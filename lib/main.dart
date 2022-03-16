@@ -18,6 +18,7 @@ void main() => runApp(GetMaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         unselectedWidgetColor: Colors.grey[600],
+        fontFamily: "ComicSans",
       ),
     ));
 
@@ -52,10 +53,8 @@ class ProfileScreen extends StatelessWidget {
                       width: 253,
                       child: Text(
                         "Discover all about sport",
-                        style: GoogleFonts.sourceSansPro(
-                            color: Colors.white,
-                            fontSize: 40,
-                            fontWeight: FontWeight.w600),
+                        style:
+                            GoogleFonts.sourceSansPro(color: Colors.white, fontSize: 40, fontWeight: FontWeight.w600),
                       ),
                     ),
                     Padding(padding: EdgeInsets.only(top: 14)),
@@ -64,9 +63,7 @@ class ProfileScreen extends StatelessWidget {
                       child: Text(
                         "Search millions of jobs and get the inside scoop on companies.\nWait for what? Let’s get start it!",
                         style: GoogleFonts.sourceSansPro(
-                            color: Color(0xff65656b),
-                            fontSize: 16,
-                            fontWeight: FontWeight.w400),
+                            color: Color(0xff65656b), fontSize: 16, fontWeight: FontWeight.w400),
                       ),
                     ),
                     Padding(padding: EdgeInsets.only(top: 25)),

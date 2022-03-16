@@ -1,101 +1,122 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:nitusue/home/widget/home_bottom.dart';
+import 'package:nitusue/home/widget/home_top.dart';
+import 'package:nitusue/home/widget/list_live_matches.dart';
+import 'package:nitusue/teamdetails/league_fixtures.dart';
+import 'package:nitusue/teamdetails/league_teams.dart';
+import 'package:nitusue/utils/api/soccer_api.dart';
+import 'package:nitusue/utils/models/match.dart';
+import 'package:nitusue/utils/widget/background.dart';
+import 'package:nitusue/utils/widget/constants.dart';
 
 class HomeScreen extends StatelessWidget {
+  late Function opt, opt2;
   @override
   Widget build(BuildContext context) {
+    final _size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Color(0xff222232),
-      body: Padding(
-        padding: EdgeInsets.fromLTRB(24, 39, 24, 0),
-        child: SafeArea(
-          child: Container(
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height,
-            color: Color(0xff222232),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  children: [
-                    Text(
-                      "LiveScore",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 24,
-                      ),
-                    ),
-                    IconButton(
-                      onPressed: () {},
-                      icon: Icon(Icons.search_rounded),
-                      color: Colors.white,
-                    )
-                  ],
-                ),
-                Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: 197,
-                  // color: Colors.amberAccent,
-                  child: Stack(
-                    alignment: AlignmentDirectional.bottomStart,
-                    children: [
-                      Positioned(
-                        child: Container(
-                          height: 157,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(16),
-                            gradient: LinearGradient(
-                              begin: Alignment.centerLeft,
-                              end: Alignment.centerRight,
-                              colors: [Color(0xff246bfd), Color(0xff0c0c69)],
+      body: SafeArea(
+        child: Container(
+          color: Color(0xff222232),
+          child: Stack(
+            children: [
+              TransparentBackground(),
+              Column(
+                children: [
+                  Container(
+                    //app bar
+                    height: 50,
+                    color: Color(0xff222232),
+                    child: Center(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10.0),
+                            child: Icon(
+                              Icons.menu,
+                              color: Colors.white,
                             ),
                           ),
-                        ),
+                          Text(
+                            "NITUSUE BET",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: fontSizexLarge,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(right: 10.0),
+                            child: Icon(
+                              Icons.person,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ],
                       ),
-                      Positioned(
-                        top: 55,
-                        child: Padding(
-                          padding: const EdgeInsets.only(left: 20.0),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              SportCard(),
-                              SizedBox(
-                                width: 158,
-                                child: Text(
-                                  "Liverpool UEFA Champion League\nCelebration",
-                                  style: GoogleFonts.sourceSansPro(
-                                      color: Colors.white,
-                                      fontSize: 18,
-                                      height: 1.3,
-                                      fontWeight: FontWeight.w600),
-                                ),
-                              ),
-                              SizedBox(
-                                height: 5,
-                              ),
-                              Text(
-                                "Yesterday, 06.30 PM",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 12,
-                                ),
-                              )
-                            ],
+                    ),
+                  ),
+                  HomeTop(
+                    onViewAllTap: () {},
+                    onLeagueTap: (league) {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (ctx) => LeagueFixtures(
+                            league: league,
                           ),
                         ),
-                      ),
-                      Positioned(
-                        left: MediaQuery.of(context).size.width - 231,
-                        child: Image.asset(
-                          'assets/images/image-removebg.png',
-                        ),
-                      )
-                    ],
+                      );
+                    },
+                    height: _size.height * 0.22,
                   ),
-                ),
-              ],
-            ),
+                  SizedBox(
+                    height: marginLarge,
+                  ),
+                  Expanded(
+                    child: FutureBuilder(
+                      future: SoccerApi.getLiveMatches(),
+                      builder: (ctx, snapshot) {
+                        if (snapshot.connectionState == ConnectionState.active ||
+                            snapshot.connectionState == ConnectionState.waiting) {
+                          return Center(
+                            child: CircularProgressIndicator(),
+                          );
+                        }
+                        if (snapshot.hasError) {
+                          return Center(
+                            child: Text("An Error occurred !"),
+                          );
+                        }
+
+                        final List<SoccerMatch> liveMatches = snapshot.data as List<SoccerMatch>;
+                        return LiveMatchesList(
+                          liveMatches: liveMatches,
+                          onTap: () {},
+                          onViewAllTap: () {},
+                        );
+                      },
+                    ),
+                  ),
+                  SizedBox(
+                    height: marginLarge,
+                  ),
+                  HomeBottom(
+                    onViewAllTap: () {},
+                    onLeagueTap: (league) {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (builder) => LeagueTeams(league: league),
+                        ),
+                      );
+                    },
+                    height: _size.height * 0.22,
+                  ),
+                ],
+              ),
+            ],
           ),
         ),
       ),
@@ -133,10 +154,7 @@ class SportCard extends StatelessWidget {
               SizedBox(width: 6),
               Text(
                 "Football",
-                style: GoogleFonts.sourceSansPro(
-                    color: Color(0xff181829),
-                    fontSize: 12,
-                    fontWeight: FontWeight.w600),
+                style: GoogleFonts.sourceSansPro(color: Color(0xff181829), fontSize: 12, fontWeight: FontWeight.w600),
               ),
             ],
           ),

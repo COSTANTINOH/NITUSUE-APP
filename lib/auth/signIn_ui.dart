@@ -1,8 +1,6 @@
 // import 'dart:html';
-import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:nitusue/splash/playerSplash_ui.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:nitusue/auth/signUp_ui.dart';
@@ -18,7 +16,7 @@ class SignIn extends StatefulWidget {
 class _SignInState extends State<SignIn> with SingleTickerProviderStateMixin {
   FocusNode _focusNode = FocusNode();
   AnimationController? _animationController;
-  Animation? _animation;
+  late Animation _animation;
 
   @override
   void initState() {

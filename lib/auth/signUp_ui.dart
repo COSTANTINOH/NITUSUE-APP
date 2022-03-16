@@ -23,12 +23,9 @@ class SignUp extends StatelessWidget {
                     SizedBox(
                       width: 267,
                       child: Text(
-                        "What sport do you interest?",
+                        "What betting sport do you interest?",
                         style: GoogleFonts.sourceSansPro(
-                            color: Colors.white,
-                            fontSize: 36,
-                            height: 1.5,
-                            fontWeight: FontWeight.w600),
+                            color: Colors.white, fontSize: 36, height: 1.5, fontWeight: FontWeight.w600),
                       ),
                     ),
                     SizedBox(
@@ -58,20 +55,24 @@ class SignUp extends StatelessWidget {
                         //Child Widget aspect ratio
                         childAspectRatio: 1,
                         children: [
+                          BuildSportsLogo(sportTittle: 'Soccer', imageName: 'soccer'),
                           BuildSportsLogo(
-                              sportTittle: 'Soccer', imageName: 'soccer'),
+                            sportTittle: 'Basketball',
+                            imageName: 'basketball',
+                          ),
                           BuildSportsLogo(
-                              sportTittle: 'Basketball',
-                              imageName: 'basketball'),
+                            sportTittle: 'Football',
+                            imageName: 'football',
+                          ),
+                          BuildSportsLogo(sportTittle: 'Baseball', imageName: 'baseball'),
                           BuildSportsLogo(
-                              sportTittle: 'Football', imageName: 'football'),
+                            sportTittle: 'Tennis',
+                            imageName: 'tennis',
+                          ),
                           BuildSportsLogo(
-                              sportTittle: 'Baseball', imageName: 'baseball'),
-                          BuildSportsLogo(
-                              sportTittle: 'Tennis', imageName: 'tennis'),
-                          BuildSportsLogo(
-                              sportTittle: 'Volleyball',
-                              imageName: 'volleyball'),
+                            sportTittle: 'Volleyball',
+                            imageName: 'volleyball',
+                          ),
                         ],
                       ),
                     ),
@@ -86,9 +87,10 @@ class SignUp extends StatelessWidget {
                         child: Text(
                           'Continue',
                           style: GoogleFonts.sourceSansPro(
-                              color: Colors.white,
-                              fontSize: 18,
-                              fontWeight: FontWeight.w600),
+                            color: Colors.white,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w600,
+                          ),
                         ),
                         style: TextButton.styleFrom(
                           primary: Colors.purple,
@@ -107,9 +109,10 @@ class SignUp extends StatelessWidget {
                         child: Text(
                           "Skip",
                           style: GoogleFonts.sourceSansPro(
-                              color: Colors.white,
-                              fontSize: 18,
-                              fontWeight: FontWeight.w600),
+                            color: Colors.white,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w600,
+                          ),
                         ),
                       ),
                     ),
@@ -161,8 +164,8 @@ class _BuildSportsLogoState extends State<BuildSportsLogo> {
         child: Column(
           children: [
             Container(
-              width: 92,
-              height: 92,
+              width: 70,
+              height: 70,
               decoration: BoxDecoration(
                 boxShadow: [
                   BoxShadow(
@@ -172,9 +175,10 @@ class _BuildSportsLogoState extends State<BuildSportsLogo> {
                   )
                 ],
                 gradient: LinearGradient(
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                    colors: _gradient),
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: _gradient,
+                ),
                 shape: BoxShape.circle,
               ),
               child: Image.asset(

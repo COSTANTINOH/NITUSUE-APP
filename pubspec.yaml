@@ -34,6 +34,8 @@ dev_dependencies:
   get: ^4.1.4
   google_fonts: ^2.0.0
   pixel_perfect: ^1.1.0
+  flutter_svg: ^0.22.0
+  cached_network_image: ^3.0.0
 
 dependency_overrides:
   platform: ^3.1.0
