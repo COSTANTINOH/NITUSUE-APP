@@ -52,7 +52,7 @@ class ProfileScreen extends StatelessWidget {
                     SizedBox(
                       width: 253,
                       child: Text(
-                        "Discover all about sport",
+                        "Jumba la washindani",
                         style:
                             GoogleFonts.sourceSansPro(color: Colors.white, fontSize: 40, fontWeight: FontWeight.w600),
                       ),
@@ -61,7 +61,7 @@ class ProfileScreen extends StatelessWidget {
                     SizedBox(
                       width: 253,
                       child: Text(
-                        "Search millions of jobs and get the inside scoop on companies.\nWait for what? Let’s get start it!",
+                        "Ndani kuna washindani wengi ambao wako tayari kushindana kwa ajili ya pesa yao.\nUnasubiri nini? Karibu kwa washindani!",
                         style: GoogleFonts.sourceSansPro(
                             color: Color(0xff65656b), fontSize: 16, fontWeight: FontWeight.w400),
                       ),

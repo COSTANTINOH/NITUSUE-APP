@@ -16,8 +16,7 @@ class HomeTop extends StatelessWidget {
       height: height,
       margin: const EdgeInsets.only(left: marginxLarge),
       decoration: BoxDecoration(
-        //color: BG_TOP_CONTAINER,
-
+        color: BG_TOP_CONTAINER,
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(radiusStandard),
           bottomLeft: Radius.circular(radiusStandard),
