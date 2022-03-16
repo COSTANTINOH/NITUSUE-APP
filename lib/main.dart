@@ -77,7 +77,7 @@ class ProfileScreen extends StatelessWidget {
                               Get.to(() => SignIn());
                             },
                             child: Text(
-                              'Sign in',
+                              'Ingia',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16,
@@ -99,7 +99,7 @@ class ProfileScreen extends StatelessWidget {
                               Get.to(() => SignUp());
                             },
                             child: Text(
-                              'Sign up',
+                              'Jisajili',
                               style: TextStyle(
                                 color: Colors.grey,
                                 fontSize: 18,

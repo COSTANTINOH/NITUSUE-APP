@@ -16,7 +16,7 @@ class HomeTop extends StatelessWidget {
       height: height,
       margin: const EdgeInsets.only(left: marginxLarge),
       decoration: BoxDecoration(
-        color: BG_TOP_CONTAINER,
+        color: Colors.white10,
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(radiusStandard),
           bottomLeft: Radius.circular(radiusStandard),
@@ -30,10 +30,10 @@ class HomeTop extends StatelessWidget {
               children: [
                 Expanded(
                   child: Text(
-                    "Fixtures",
+                    "Michezo kwa ligi",
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: fontSizeLarge,
+                      fontSize: fontSizeSmall,
                     ),
                   ),
                 ),
@@ -42,8 +42,11 @@ class HomeTop extends StatelessWidget {
                   child: Visibility(
                     visible: onViewAllTap != null,
                     child: Text(
-                      "View All",
-                      style: TextStyle(color: Colors.white30, fontSize: fontSizeStandard),
+                      "Ona zote",
+                      style: TextStyle(
+                        color: Colors.white70,
+                        fontSize: fontSizeStandard,
+                      ),
                     ),
                   ),
                 ),

@@ -116,6 +116,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "font_awesome_flutter",
+      "rootUri": "file:///Users/macbook/Desktop/flutter_versions/flutter2/.pub-cache/hosted/pub.dartlang.org/font_awesome_flutter-9.2.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "get",
       "rootUri": "file:///Users/macbook/Desktop/flutter_versions/flutter2/.pub-cache/hosted/pub.dartlang.org/get-4.1.4",
       "packageUri": "lib/",
@@ -356,7 +362,7 @@
       "languageVersion": "2.12"
     }
   ],
-  "generated": "2022-03-16T06:09:27.500549Z",
+  "generated": "2022-03-16T09:20:22.979670Z",
   "generator": "pub",
   "generatorVersion": "2.16.0"
 }

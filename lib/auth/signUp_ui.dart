@@ -23,16 +23,16 @@ class SignUp extends StatelessWidget {
                     SizedBox(
                       width: 267,
                       child: Text(
-                        "What betting sport do you interest?",
+                        "Je ungependelea kushinda kwenye michezo hipi?",
                         style: GoogleFonts.sourceSansPro(
-                            color: Colors.white, fontSize: 36, height: 1.5, fontWeight: FontWeight.w600),
+                            color: Colors.white, fontSize: 30, height: 1.5, fontWeight: FontWeight.w600),
                       ),
                     ),
                     SizedBox(
                       height: 14,
                     ),
                     Text(
-                      "You can choose more than one",
+                      "Unaweza chagua mchezo zaidi ya mmoja 😊",
                       style: TextStyle(
                         color: Color(0xff65656b),
                         fontSize: 16,
@@ -85,7 +85,7 @@ class SignUp extends StatelessWidget {
                       child: TextButton(
                         onPressed: () {},
                         child: Text(
-                          'Continue',
+                          'Endelea',
                           style: GoogleFonts.sourceSansPro(
                             color: Colors.white,
                             fontSize: 18,

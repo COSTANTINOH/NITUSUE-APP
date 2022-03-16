@@ -5,12 +5,11 @@ import 'package:nitusue/teamdetails/live_match_details.dart';
 import 'package:nitusue/utils/models/match.dart';
 import 'package:nitusue/utils/widget/constants.dart';
 
-
 class LiveMatchesList extends StatelessWidget {
   final Function onTap;
   final Function onViewAllTap;
   final List<SoccerMatch> liveMatches;
-  LiveMatchesList({Key? key,required this.liveMatches,required this.onTap,required this.onViewAllTap})
+  LiveMatchesList({Key? key, required this.liveMatches, required this.onTap, required this.onViewAllTap})
       : super(key: key);
 
   @override
@@ -19,17 +18,17 @@ class LiveMatchesList extends StatelessWidget {
       child: Column(
         children: [
           Padding(
-            padding:  EdgeInsets.symmetric(
+            padding: EdgeInsets.symmetric(
               horizontal: marginLarge,
             ),
             child: Row(
               children: [
                 Expanded(
                   child: Text(
-                    "Live Matches",
+                    "Ushindani kwa leo",
                     style: TextStyle(
-                      color: Colors.black,
-                      fontSize: fontSizeLarge,
+                      color: Colors.white,
+                      fontSize: fontSizeSmall,
                     ),
                   ),
                 ),
@@ -75,7 +74,9 @@ class LiveMatchesList extends StatelessWidget {
                       },
                     ),
                   )
-                : NoLiveMatches(height: 100,),
+                : NoLiveMatches(
+                    height: 100,
+                  ),
           ),
         ],
       ),

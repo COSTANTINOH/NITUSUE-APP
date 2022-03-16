@@ -6,7 +6,7 @@ class HomeBottom extends StatelessWidget {
   final double height;
   final Function onViewAllTap;
   final ValueSetter<League> onLeagueTap;
-  const HomeBottom({Key? key,required this.height,required this.onViewAllTap,required this.onLeagueTap})
+  const HomeBottom({Key? key, required this.height, required this.onViewAllTap, required this.onLeagueTap})
       : super(key: key);
 
   @override
@@ -16,7 +16,7 @@ class HomeBottom extends StatelessWidget {
       height: height,
       margin: const EdgeInsets.only(right: marginxLarge),
       decoration: BoxDecoration(
-        color: BG_BOTTOM_CONTAINER,
+        color: Colors.white10,
         borderRadius: BorderRadius.only(
           topRight: Radius.circular(radiusStandard),
           bottomRight: Radius.circular(radiusStandard),
@@ -30,10 +30,10 @@ class HomeBottom extends StatelessWidget {
               children: [
                 Expanded(
                   child: Text(
-                    "Teams",
+                    "Timu Pendwa",
                     style: TextStyle(
-                      color: Colors.white,
-                      fontSize: fontSizeLarge,
+                      color: Colors.white70,
+                      fontSize: fontSizeSmall,
                     ),
                   ),
                 ),

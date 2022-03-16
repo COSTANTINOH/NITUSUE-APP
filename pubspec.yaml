@@ -36,6 +36,7 @@ dev_dependencies:
   pixel_perfect: ^1.1.0
   flutter_svg: ^0.22.0
   cached_network_image: ^3.0.0
+  font_awesome_flutter:
 
 dependency_overrides:
   platform: ^3.1.0

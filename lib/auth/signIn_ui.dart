@@ -106,11 +106,9 @@ class _SignInState extends State<SignIn> with SingleTickerProviderStateMixin {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              "Welcome",
+                              "Karibu NITUSUE BET",
                               style: GoogleFonts.sourceSansPro(
-                                  color: Colors.white,
-                                  fontSize: 28,
-                                  fontWeight: FontWeight.w600),
+                                  color: Colors.white, fontSize: 28, fontWeight: FontWeight.w600),
                             ),
                             SizedBox(
                               height: 12,
@@ -143,8 +141,7 @@ class LoginUiText extends StatefulWidget {
   _LoginUiTextState createState() => _LoginUiTextState();
 }
 
-class _LoginUiTextState extends State<LoginUiText>
-    with SingleTickerProviderStateMixin {
+class _LoginUiTextState extends State<LoginUiText> with SingleTickerProviderStateMixin {
   final _formKey = GlobalKey<FormState>();
   // final _scaffoldKey = GlobalKey<ScaffoldState>();
   bool _validate = false;
@@ -166,16 +163,15 @@ class _LoginUiTextState extends State<LoginUiText>
               filled: true,
               fillColor: Colors.black54,
               focusColor: Color(0xff65656b),
-              border:
-                  OutlineInputBorder(borderRadius: BorderRadius.circular(12.0)),
+              border: OutlineInputBorder(borderRadius: BorderRadius.circular(12.0)),
               prefixIcon: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Icon(
-                  Icons.email_outlined,
+                  Icons.phone,
                   color: Colors.grey[600],
                 ),
               ),
-              hintText: "Email",
+              hintText: "Nambari ya simu",
               hintStyle: TextStyle(color: Color(0xff65656b)),
             ),
             keyboardType: TextInputType.emailAddress,
@@ -195,9 +191,8 @@ class _LoginUiTextState extends State<LoginUiText>
             decoration: InputDecoration(
               filled: true,
               fillColor: Colors.black54,
-              border:
-                  OutlineInputBorder(borderRadius: BorderRadius.circular(12.0)),
-              hintText: "Password",
+              border: OutlineInputBorder(borderRadius: BorderRadius.circular(12.0)),
+              hintText: "Neno la siri",
               hintStyle: TextStyle(color: Color(0xff65656b)),
               prefixIcon: Icon(
                 Icons.lock_outline_rounded,
@@ -211,8 +206,7 @@ class _LoginUiTextState extends State<LoginUiText>
                 },
                 child: Icon(
                   _obscureText ? Icons.visibility_off : Icons.visibility,
-                  semanticLabel:
-                      _obscureText ? 'show password' : 'hide password',
+                  semanticLabel: _obscureText ? 'show password' : 'hide password',
                 ),
               ),
             ),
@@ -248,7 +242,7 @@ class _LoginUiTextState extends State<LoginUiText>
               TextButton(
                 onPressed: () {},
                 child: Text(
-                  "Forgot password",
+                  "Umesahau neno la siri?",
                   style: TextStyle(color: Colors.white),
                 ),
               ),
@@ -263,7 +257,7 @@ class _LoginUiTextState extends State<LoginUiText>
             child: TextButton(
               onPressed: () {},
               child: Text(
-                'Sign in',
+                'Ingia',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 16,
@@ -282,7 +276,7 @@ class _LoginUiTextState extends State<LoginUiText>
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                "Don’t have account?",
+                "Hauna akaunti?",
                 style: TextStyle(
                   fontSize: 14,
                   color: Colors.white,
@@ -292,7 +286,7 @@ class _LoginUiTextState extends State<LoginUiText>
                 onPressed: () {
                   Get.to(() => SignUp());
                 },
-                child: Text("Sign UP"),
+                child: Text("Jisajili"),
               )
             ],
           )
