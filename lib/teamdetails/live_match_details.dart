@@ -74,24 +74,24 @@ class _LiveMatchDetailsState extends State<LiveMatchDetails> {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Text(
-                                  widget.match.goal.home.toString(),
-                                  style: TextStyle(
-                                      fontSize: fontSizexxLarge,
-                                      color: Colors.white),
-                                ),
-                                Text(
-                                  "-",
-                                  style: TextStyle(
-                                      fontSize: fontSizexxLarge,
-                                      color: Colors.white),
-                                ),
-                                Text(
-                                  widget.match.goal.away.toString(),
-                                  style: TextStyle(
-                                      fontSize: fontSizexxLarge,
-                                      color: Colors.white),
-                                ),
+                                // Text(
+                                //   widget.match.goal.home.toString(),
+                                //   style: TextStyle(
+                                //       fontSize: fontSizexxLarge,
+                                //       color: Colors.white),
+                                // ),
+                                // Text(
+                                //   "-",
+                                //   style: TextStyle(
+                                //       fontSize: fontSizexxLarge,
+                                //       color: Colors.white),
+                                // ),
+                                // Text(
+                                //   widget.match.goal.away.toString(),
+                                //   style: TextStyle(
+                                //       fontSize: fontSizexxLarge,
+                                //       color: Colors.white),
+                                // ),
                               ],
                             ),
                           ),
@@ -119,12 +119,12 @@ class _LiveMatchDetailsState extends State<LiveMatchDetails> {
                       title: "League",
                       subTitle: widget.match.league.name,
                     ),
-                    LiveDetailItem(
-                      image: IMG_VENUE,
-                      title: "Venue",
-                      subTitle: widget.match.fixture.venue.name,
-                      subTitle2: widget.match.fixture.venue.city,
-                    ),
+                    // LiveDetailItem(
+                    //   image: IMG_VENUE,
+                    //   title: "Venue",
+                    //   subTitle: widget.match.fixture.venue.name,
+                    //   subTitle2: widget.match.fixture.venue.city,
+                    // ),
                     LiveDetailItem(
                       image: IMG_CLOCK,
                       title: "Status",

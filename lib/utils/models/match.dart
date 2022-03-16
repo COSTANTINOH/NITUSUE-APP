@@ -7,9 +7,9 @@ class SoccerMatch {
   Fixture fixture;
   Team home;
   Team away;
-  Goal goal;
+  // Goal goal;
   League league;
-  SoccerMatch(this.fixture, this.home, this.away, this.goal, this.league);
+  SoccerMatch(this.fixture, this.home, this.away, this.league);
 
   factory SoccerMatch.fromJson(Map<String, dynamic> json) {
     return SoccerMatch(
@@ -18,7 +18,7 @@ class SoccerMatch {
         json['teams']['home'],
       ),
       Team.fromJson(json['teams']['away']),
-      Goal.fromJson(json['goals']),
+      // Goal.fromJson(json['goals']),
       League.fromJson(json['league']),
     );
   }

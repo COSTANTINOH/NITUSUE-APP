@@ -6,11 +6,11 @@ class Fixture {
   String date;
   String referee;
   Status status;
-  Venue venue;
-  Fixture(this.id, this.date, this.referee, this.status, this.venue);
+  // Venue venue;
+  Fixture(this.id, this.date, this.referee, this.status);
 
   factory Fixture.fromJson(Map<String, dynamic> json) {
     return Fixture(
-        json['id'], json['date'], json['referee'], Status.fromJson(json['status']), Venue.fromJson(json['venue']));
+        json['id'], json['date'], json['referee'], Status.fromJson(json['status']));
   }
 }

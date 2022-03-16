@@ -7,10 +7,9 @@ import 'package:nitusue/utils/models/statistic.dart';
 import 'package:nitusue/utils/widget/background.dart';
 import 'package:nitusue/utils/widget/constants.dart';
 
-
 class MatchStatistics extends StatefulWidget {
   final SoccerMatch match;
-  const MatchStatistics({Key? key,required this.match}) : super(key: key);
+  const MatchStatistics({Key? key, required this.match}) : super(key: key);
 
   @override
   _MatchStatisticsState createState() => _MatchStatisticsState();
@@ -30,11 +29,9 @@ class _MatchStatisticsState extends State<MatchStatistics> {
 
   void getStatistics() async {
     isLoading = true;
-    homeStatistics = await SoccerApi.getTeamStatistics(
-        widget.match.fixture.id, widget.match.home.id);
+    homeStatistics = await SoccerApi.getTeamStatistics(widget.match.fixture.id, widget.match.home.id);
 
-    awayStatistics = await SoccerApi.getTeamStatistics(
-        widget.match.fixture.id, widget.match.away.id);
+    awayStatistics = await SoccerApi.getTeamStatistics(widget.match.fixture.id, widget.match.away.id);
     isLoading = false;
     _homeStatLength = homeStatistics.length;
     _awayStatLength = awayStatistics.length;
@@ -52,8 +49,7 @@ class _MatchStatisticsState extends State<MatchStatistics> {
   Widget build(BuildContext context) {
     final _size = MediaQuery.of(context).size;
 
-    final _statLength =
-        _homeStatLength >= _awayStatLength ? _awayStatLength : _homeStatLength;
+    final _statLength = _homeStatLength >= _awayStatLength ? _awayStatLength : _homeStatLength;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: COLOR_PRIMARY,
@@ -72,7 +68,7 @@ class _MatchStatisticsState extends State<MatchStatistics> {
                   bottomRight: Radius.circular(radiusStandard),
                 ),
                 child: Container(
-                  padding:  EdgeInsets.all(marginLarge),
+                  padding: EdgeInsets.all(marginLarge),
                   // height: _size.height * 0.2,
                   width: double.infinity,
                   color: COLOR_PRIMARY,
@@ -109,22 +105,16 @@ class _MatchStatisticsState extends State<MatchStatistics> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
-                                  widget.match.goal.home.toString(),
-                                  style: TextStyle(
-                                      fontSize: fontSizexxLarge,
-                                      color: Colors.white),
+                                  '0',
+                                  style: TextStyle(fontSize: fontSizexxLarge, color: Colors.white),
                                 ),
                                 Text(
                                   "-",
-                                  style: TextStyle(
-                                      fontSize: fontSizexxLarge,
-                                      color: Colors.white),
+                                  style: TextStyle(fontSize: fontSizexxLarge, color: Colors.white),
                                 ),
                                 Text(
-                                  widget.match.goal.away.toString(),
-                                  style: TextStyle(
-                                      fontSize: fontSizexxLarge,
-                                      color: Colors.white),
+                                  '0',
+                                  style: TextStyle(fontSize: fontSizexxLarge, color: Colors.white),
                                 ),
                               ],
                             ),

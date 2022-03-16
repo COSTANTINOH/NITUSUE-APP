@@ -7,8 +7,7 @@ class MatchFixtureItem extends StatelessWidget {
   final int leagueId;
   final SoccerMatch match;
   final ValueSetter<SoccerMatch> onFixtureTap;
-  const MatchFixtureItem(
-      {Key? key,required this.match,required this.leagueId,required this.onFixtureTap})
+  const MatchFixtureItem({Key? key, required this.match, required this.leagueId, required this.onFixtureTap})
       : super(key: key);
 
   static const List<Color> colors = [
@@ -34,17 +33,17 @@ class MatchFixtureItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var homeGoal = match.goal.home;
-    var awayGoal = match.goal.away;
-    if (homeGoal == null) homeGoal = 0;
-    if (awayGoal == null) awayGoal = 0;
+    // var homeGoal = match.goal.home;
+    // var awayGoal = match.goal.away;
+    // if (homeGoal == null) homeGoal = 0;
+    // if (awayGoal == null) awayGoal = 0;
 
     return InkWell(
       onTap: () => onFixtureTap(match),
       child: Container(
         height: 70,
-        margin:  EdgeInsets.all(marginStandard),
-        padding:  EdgeInsets.all(marginStandard),
+        margin: EdgeInsets.all(marginStandard),
+        padding: EdgeInsets.all(marginStandard),
         decoration: BoxDecoration(
           color: _itemColor,
           borderRadius: BorderRadius.all(
@@ -76,7 +75,7 @@ class MatchFixtureItem extends StatelessWidget {
             ),
             Expanded(
               child: Text(
-                "$homeGoal - $awayGoal",
+                "0 - 0",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   color: Colors.white,

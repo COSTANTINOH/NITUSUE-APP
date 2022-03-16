@@ -3,18 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:nitusue/utils/models/match.dart';
 import 'package:nitusue/utils/widget/constants.dart';
 
-
 class LiveMatchCard extends StatelessWidget {
-  final SoccerMatch match;
+  final dynamic match;
   final int index;
-  const LiveMatchCard({Key? key,required this.index,required this.match}) : super(key: key);
+  const LiveMatchCard({Key? key, required this.index, required this.match}) : super(key: key);
 
-  static List<Color> cardColors = [
-    BG_CARD_LIVE_1,
-    BG_CARD_LIVE_2,
-    BG_CARD_LIVE_3,
-    BG_CARD_LIVE_4
-  ];
+  static List<Color> cardColors = [BG_CARD_LIVE_1, BG_CARD_LIVE_2, BG_CARD_LIVE_3, BG_CARD_LIVE_4];
 
   Color get _cardColor {
     return cardColors[index % 4];
@@ -27,7 +21,7 @@ class LiveMatchCard extends StatelessWidget {
     final _logoWidth = _cardWidth * 0.3 - marginStandard * 2;
     return Container(
       width: _cardWidth,
-      margin:  EdgeInsets.symmetric(
+      margin: EdgeInsets.symmetric(
         horizontal: marginStandard,
         vertical: marginLarge,
       ),
@@ -77,8 +71,7 @@ class LiveMatchCard extends StatelessWidget {
                           placeholder: (context, url) => Center(
                             child: CircularProgressIndicator(),
                           ),
-                          errorWidget: (context, url, error) =>
-                              Icon(Icons.error),
+                          errorWidget: (context, url, error) => Icon(Icons.error),
                         ),
                       ),
                       Container(
@@ -112,8 +105,7 @@ class LiveMatchCard extends StatelessWidget {
                           placeholder: (context, url) => Center(
                             child: CircularProgressIndicator(),
                           ),
-                          errorWidget: (context, url, error) =>
-                              Icon(Icons.error),
+                          errorWidget: (context, url, error) => Icon(Icons.error),
                         ),
                       ),
                       Container(
@@ -125,7 +117,9 @@ class LiveMatchCard extends StatelessWidget {
                           softWrap: false,
                         ),
                       ),
-                      Text(match.goal.away.toString()),
+                      Text(
+                        match.goal.away.toString(),
+                      ),
                     ],
                   ),
                 ),
